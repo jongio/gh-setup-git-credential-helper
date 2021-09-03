@@ -5,5 +5,4 @@ ARG VARIANT="buster"
 FROM mcr.microsoft.com/vscode/devcontainers/base:0-${VARIANT}
 
 COPY library-scripts/github-debian.sh /tmp/library-scripts/
-RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && bash /tmp/library-scripts/github-debian.sh \
-    && gh extension install jongio/gh-setup-git-credential-helper
+RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && bash /tmp/library-scripts/github-debian.sh

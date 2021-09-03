@@ -33,6 +33,16 @@ Here are the related GitHub issues:
 ## Uninstall
 1. Run `gh extension remove gh-setup-git-credential-helper`
 
+## Install in DevContainer
+
+See the code in this repo in /.devcontainer to see how to add this to your devcontainer
+
+1. Copy the `github-debian.sh` script to library-scripts
+1. Add the install command to your Dockerfile
+    ```bash
+    RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && bash /tmp/library-scripts/github-debian.sh
+    ```
+1. Manually run `gh setup-git-credential-helper` when your container starts.
 
 
 ## Error Messages
